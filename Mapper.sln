@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mapper", "src\Mapper\Mapper.csproj", "{7EB65AD6-30A0-4221-9F86-731238C8C544}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mapper.Tests", "src\Mapper.Tests\Mapper.Tests.csproj", "{91322100-B210-493E-A7DE-A467772A9E73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EB65AD6-30A0-4221-9F86-731238C8C544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB65AD6-30A0-4221-9F86-731238C8C544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB65AD6-30A0-4221-9F86-731238C8C544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB65AD6-30A0-4221-9F86-731238C8C544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91322100-B210-493E-A7DE-A467772A9E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91322100-B210-493E-A7DE-A467772A9E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91322100-B210-493E-A7DE-A467772A9E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91322100-B210-493E-A7DE-A467772A9E73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F19DC3C-0306-478E-8C82-4E7CDBADF311}
+	EndGlobalSection
+EndGlobal

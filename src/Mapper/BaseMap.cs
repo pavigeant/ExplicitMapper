@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Mapper.Rules;
 
 namespace Mapper
 {
-    public abstract class BaseMap<TSource, TTarget> : IMap<TSource, TTarget>, IMapRule
+    public abstract class BaseMap<TSource, TTarget> : IMap<TSource, TTarget>
     {
 
         public BaseMap()
@@ -12,17 +14,21 @@ namespace Mapper
 
         public IList<IMapRule> Rules { get; }
 
-        void IMap.Map(object source, object target) => ((IMapRule)this).Apply(source, target);
+        public void Map(object source, object target) => Apply(source, target);
 
-        void IMap<TSource, TTarget>.Map(TSource source, TTarget target) => Apply(source, target);
+        public void Map(TSource source, TTarget target) => Apply(source, target);
 
-        void IMapRule.Apply(object source, object target)
+        private void Apply(object source, object target)
         {
-            if (source is TSource s &&
-                target is TTarget t)
+            if (source is TSource s)
             {
-                Apply(s, t);
+                if (target is TTarget t)
+                    Apply(s, t);
+                else
+                    throw new InvalidCastException($"{nameof(target)} is not of type {typeof(TTarget)}.");
             }
+            else
+                throw new InvalidCastException($"{nameof(source)} is not of type {typeof(TSource)}.");
         }
 
         protected abstract void Apply(TSource source, TTarget target);
@@ -34,7 +40,7 @@ namespace Mapper
         {
             foreach (var rule in Rules)
             {
-                rule.Apply(source, target);
+                rule.Map(source, target);
             }
         }
     }

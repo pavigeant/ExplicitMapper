@@ -5,23 +5,23 @@ namespace Mapper.Tests
     public class PropertyMapTest
     {
         [Fact]
-        public void WhenMappingPropertyShouldPropertyBeSet()
+        public void WhenMappingPropertyThenPropertyShouldBeSet()
         {
             var mapper = new PropertyMapper();
 
             var s = new Source { Name = "Bob", Age = 18 };
-            var t = mapper.Map<Target>(s);
+            var t = mapper.Map(s);
 
             Assert.Equal("Bob18", t.Id);
         }
 
         [Fact]
-        public void WhenMappingFieldShouldFieldBeSet()
+        public void WhenMappingFieldThenFieldShouldBeSet()
         {
             var mapper = new PropertyMapper();
 
             var s = new Source { NameField = "Bob", AgeField = 18 };
-            var t = mapper.Map<Target>(s);
+            var t = mapper.Map(s);
 
             Assert.Equal("Bob18", t.IdField);
         }

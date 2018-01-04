@@ -25,7 +25,7 @@ namespace Mapper
         }
 
         public static void For<TSource, TTarget, TTargetProperty>(
-            this Map<TSource, TTarget> map,
+            this BaseMap<TSource, TTarget> map,
             Expression<Func<TTarget, TTargetProperty>> property,
             Func<TSource, TTargetProperty> func)
         {
@@ -33,7 +33,7 @@ namespace Mapper
         }
 
         public static void For<TSource, TSourceProperty, TSourceItem, TTarget, TTargetProperty, TTargetItem>(
-            this Map<TSource, TTarget> map,
+            this BaseMap<TSource, TTarget> map,
             Expression<Func<TTarget, TTargetProperty>> property,
             Func<TSource, TSourceProperty> sourceEnumerable,
             IMap<TSourceItem, TTargetItem> childMap)
@@ -45,7 +45,7 @@ namespace Mapper
         }
 
         public static void Ignore<TSource, TTarget, TTargetProperty>(
-            this Map<TSource, TTarget> map,
+            this BaseMap<TSource, TTarget> map,
             Expression<Func<TTarget, TTargetProperty>> property)
         {
             map.Rules.Add(new IgnoreRule<TSource, TTarget, TTargetProperty>(property));

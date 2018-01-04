@@ -13,7 +13,7 @@ namespace Mapper.Rules
             _func = func;
         }
 
-        protected override void Apply(TSource source, TTarget target)
+        public override void Apply(TSource source, TTarget target)
         {
             Property.SetPropertyValue(target, _func(source));
         }

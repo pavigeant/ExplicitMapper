@@ -9,10 +9,10 @@ namespace Mapper
 
         public BaseMap()
         {
-            Rules = new List<IMapRule>();
+            Rules = new List<IMapRule<TSource, TTarget>>();
         }
 
-        public IList<IMapRule> Rules { get; }
+        public IList<IMapRule<TSource, TTarget>> Rules { get; }
 
         public void Map(object source, object target) => Apply(source, target);
 
@@ -31,16 +31,11 @@ namespace Mapper
                 throw new InvalidCastException($"{nameof(source)} is not of type {typeof(TSource)}.");
         }
 
-        protected abstract void Apply(TSource source, TTarget target);
-    }
-
-    public abstract class Map<TSource, TTarget> : BaseMap<TSource, TTarget>
-    {
-        protected override void Apply(TSource source, TTarget target)
+        protected virtual void Apply(TSource source, TTarget target)
         {
             foreach (var rule in Rules)
             {
-                rule.Map(source, target);
+                rule.Apply(source, target);
             }
         }
     }

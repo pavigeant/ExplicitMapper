@@ -22,7 +22,7 @@ namespace Mapper.Rules
             _childMap = childMap;
         }
 
-        protected override void Apply(TSource source, TTarget target)
+        public override void Apply(TSource source, TTarget target)
         {
             var targetList = Property.GetPropertyValue(target);
 

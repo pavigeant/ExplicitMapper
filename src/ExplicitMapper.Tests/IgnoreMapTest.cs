@@ -17,7 +17,7 @@ namespace Mapper.Tests
             Assert.Equal(8, target.Value);
         }
 
-        private class IgnorantMapper : Map<TestClass, TestClass>
+        private class IgnorantMapper : BaseMap<TestClass, TestClass>
         {
             public IgnorantMapper()
             {

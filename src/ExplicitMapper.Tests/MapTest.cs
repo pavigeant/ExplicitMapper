@@ -20,7 +20,7 @@ namespace Mapper.Tests
             Assert.Throws<MissingMappingException>(() => mapper.ValidateMapping());
         }
 
-        private class IrrelevantMapper : Map<TestClass, TestClass>
+        private class IrrelevantMapper : BaseMap<TestClass, TestClass>
         {
             public IrrelevantMapper()
             {

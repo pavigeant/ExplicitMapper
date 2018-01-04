@@ -10,7 +10,7 @@ namespace Mapper.Rules
         {
         }
 
-        protected override void Apply(TSource source, TTarget target)
+        public override void Apply(TSource source, TTarget target)
         {
             // Do nothing
         }

@@ -26,7 +26,7 @@ namespace Mapper.Tests
             Assert.Equal("Bob18", t.IdField);
         }
 
-        private class PropertyMapper : Map<Source, Target>
+        private class PropertyMapper : BaseMap<Source, Target>
         {
             public PropertyMapper()
             {
